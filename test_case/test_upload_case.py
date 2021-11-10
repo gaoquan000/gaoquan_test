@@ -39,5 +39,6 @@ class TestUpLoad(object):
         login_out.LoginOut(self.driver, self.log).out_login()
         self.driver.close()
 
-# if __name__ == "__main__":
-#     TestUpLoad()
+
+if __name__ == "__main__":
+    TestUpLoad()

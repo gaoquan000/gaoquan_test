@@ -5,7 +5,7 @@ from common import get_log
 
 
 class GetElement(object):
-    def __init__(self, driver_one):
+    def __init__(self, driver_one = None):
         self.driver_one = driver_one
         self.log = get_log.GetLog().get_log_one()
         self.path = os.path.join(os.path.dirname(os.path.dirname(__file__)) + "/config/config.ini")  # 配置文件路径

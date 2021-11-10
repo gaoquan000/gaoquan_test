@@ -15,8 +15,7 @@ class ChooseSpace(object):
         self.driver.implicitly_wait(3)
         space = self.element.get_element("element", "admin")
         try:
-            self.driver.find_element_by_xpath(
-                "//*[@id='app']/div/div/main/main/div[2]/div/div/div/div/div/div/div/table/tbody/tr/td[1]/span").click()
+            self.driver.find_element_by_css_selector(".companyName_a").click()
             self.log.info("进入空间：{}".format(space))
             # self.driver.find_element_by_css_selector(space).click()
         except Exception as e:
