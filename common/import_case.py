@@ -25,6 +25,7 @@ class ImportCase(object):
         self.driver.find_element_by_xpath(
             '/html/body/div[2]/div/div[2]/div/div[2]/div[2]/div/span/div[1]/span/input').send_keys(upload_path)
         self.driver.find_element_by_css_selector('.ant-btn-primary:nth-child(2)').click()
+        time.sleep(1)
         try:
             tip = self.driver.find_element_by_css_selector(
                 ".ant-message-custom-content > span:nth-child(2)").get_attribute("textContent")
@@ -41,7 +42,6 @@ class ImportCase(object):
         else:
             self.log.info("取消导入")
         return tip
-
 
 
 if __name__ == "__main__":

@@ -1,6 +1,8 @@
 # -*- coding = utf-8 -*-
 import time
 
+import pytest
+
 from common import driver, login_out, get_element_file
 from common import get_log
 from login import page_login
@@ -9,8 +11,9 @@ from common import login
 from common import import_case
 
 
+# 测试失败重跑
+@pytest.mark.flaky(reruns=2, reruns_delay=4)
 # 测试登录
-# TODO:登录测试用例编写
 class TestDengLu(object):
 
     def setup_class(self):
@@ -45,6 +48,7 @@ class TestDengLu(object):
         assert expect == actual
 
     def test_login_case07(self):
+        time.sleep(2)
         actual, expect = self.login.sign_in(7)
         assert expect == actual
 

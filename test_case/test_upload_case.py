@@ -1,6 +1,8 @@
 # -*- coding = utf-8 -*-
 import time
 
+import pytest
+
 from common import driver, login_out
 from common import get_log
 from common import choose_space
@@ -8,6 +10,7 @@ from common import login
 from common import import_case
 
 
+@pytest.mark.flaky(reruns=2, reruns_delay=4)
 # 上传文件
 class TestUpLoad(object):
 
@@ -28,7 +31,7 @@ class TestUpLoad(object):
 
     def test_upload_case02(self):
         shu_ju = self.import_one.upload_file("客户数据_cuowu.xls")
-        assert "上传成功" not in shu_ju
+        assert "允许上传" in shu_ju
 
     def test_upload_case03(self):
         shu_ju = self.import_one.upload_file("数据emport.xls")
