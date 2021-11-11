@@ -32,7 +32,7 @@ class Driver(object):
         # 关闭左上方 Chrome 正受到自动测试软件的控制的提示
         opt.add_experimental_option("excludeSwitches", ['enable-automation'])
         # 无界面启动浏览器
-        opt.headless = True
+        # opt.headless = True
         driver = webdriver.Chrome(options=opt)
         driver.get(url=url)
         # driver.set_window_size(1920,1080)
