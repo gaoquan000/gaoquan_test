@@ -52,7 +52,7 @@ class PageLogin(object):
             tip = self.driver.find_element_by_css_selector(
                 '.ant-form>div:nth-child(1)>.ant-col>.ant-form-item-control>.ant-form-explain').get_attribute("textContent")
         except Exception as e:
-            self.log.error("获取提示失败：{}".format(e))
+            self.log.info("没有获取到提示：{}".format(e))
         else:
             self.log.info("登录失败：{}".format(tip))
             self.log.info("实际结果：{},预期结果：{}".format(tip, expect))
